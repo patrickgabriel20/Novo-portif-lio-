@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Patrick Gabriel</title>
+    <!-- Importando o mesmo CSS da página principal -->
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Efeitos de Tecnologia, Hover e Fundo com Códigos Caindo -->
+    <style>
+        .primary-btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover, .primary-btn:hover {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.8) !important;
+        }
+
+        .dock-item {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dock-item:hover {
+            transform: translateY(-8px) scale(1.2) !important;
+            filter: drop-shadow(0 0 10px #00ffcc) !important;
+        }
+
+        /* Fundo com códigos e números flutuantes quase apagados */
+        .code-rain-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .code-column {
+            position: absolute;
+            top: -100px;
+            font-family: monospace;
+            font-size: 14px;
+            color: rgba(0, 255, 204, 0.12);
+            writing-mode: vertical-lr;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(105vh);
+            }
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+
+    <!-- Fundo com overlay escuro -->
+    <div class="background-overlay"></div>
+
+    <!-- Códigos e números flutuantes ao fundo -->
+    <div class="code-rain-bg">
+        <div class="code-column" style="left: 10%; animation-duration: 7s; animation-delay: 0s;">01001000 01100101 01101100 01101100 01101111</div>
+        <div class="code-column" style="left: 25%; animation-duration: 10s; animation-delay: 2s;">const dev = true; 101011 001101</div>
+        <div class="code-column" style="left: 45%; animation-duration: 8s; animation-delay: 1s;">HTML CSS JS 11001010 992819</div>
+        <div class="code-column" style="left: 65%; animation-duration: 12s; animation-delay: 3s;">00110011 01110011 01110100</div>
+        <div class="code-column" style="left: 85%; animation-duration: 9s; animation-delay: 1.5s;">Hello World! 404 200 OK</div>
+    </div>
+
+    <!-- Navegação Superior / Menu Flutuante -->
+    <header class="top-nav">
+        <nav class="nav-icons">
+            <a href="index.html" class="nav-icon" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="sobreMim.html" class="nav-icon active" title="Sobre Mim"><i class="fa-solid fa-user"></i></a>
+            <a href="project.html" class="nav-icon" title="Projetos"><i class="fa-solid fa-folder"></i></a>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <main class="hero-section" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 80px 0;">
+        <div class="hero-content" style="max-width: 750px; width: 90%; background: rgba(18, 18, 29, 0.85); backdrop-filter: blur(12px); padding: 45px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); text-align: left;">
+            
+            <!-- Foto de Perfil Centralizada -->
+            <div style="text-align: center; margin-bottom: 25px;">
+                <img src="img/perfil.jpg" alt="Patrick Gabriel" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);">
+            </div>
+
+            <h1 style="color: #fff; font-size: 32px; margin-bottom: 25px; text-align: center;">Sobre Mim</h1>
+            
+            <!-- Texto da História -->
+            <div style="font-size: 15px; line-height: 1.8; color: #c0c0d0; display: flex; flex-direction: column; gap: 18px; margin-bottom: 35px;">
+                <p>
+                    Eu sou o Gabriel, estudante de Análise e Desenvolvimento de Sistemas e alguém que sempre buscou aprender, evoluir e dar o seu melhor.
+                </p>
+                <p>
+                    Minha caminhada até aqui não começou somente na tecnologia. Como filho mais velho, desde cedo aprendi a ter responsabilidade e a correr atrás das coisas. Sempre tive vontade de poder ajudar minha mãe em casa e também estar presente para o meu irmão. Quando posso, ajudo minha mãe com os produtos que ela vende, seja divulgando, organizando ou fazendo o que estiver ao meu alcance.
+                </p>
+                <p>
+                    Ao mesmo tempo, fui construindo minha trajetória profissional e descobrindo meu interesse pela tecnologia. Hoje estou no terceiro período de ADS e venho estudando programação, criando projetos e tentando transformar aquilo que aprendo em algo prático.
+                </p>
+                <p>
+                    Ainda estou buscando minha primeira oportunidade na área de tecnologia, e sei que esse processo nem sempre é fácil. Já passei por momentos de desânimo e por situações em que achei que não estava evoluindo como gostaria. Mas, olhando para minha trajetória, percebo que sempre continuei tentando.
+                </p>
+                <p>
+                    É justamente isso que quero levar para minha carreira: vontade de aprender, responsabilidade e disposição para enfrentar desafios. Quero conquistar meu espaço na área de tecnologia, adquirir experiência e, com o tempo, poder olhar para trás e ver o quanto evoluí.
+                </p>
+                <p style="color: #00ffcc; font-weight: 500; text-align: center; margin-top: 10px;">
+                    Mais do que mostrar apenas o que eu sei fazer, quero que este portfólio mostre quem eu sou, de onde vim e onde quero chegar.
+                </p>
+            </div>
+
+            <!-- Seção de Formação e Cursos -->
+            <div style="margin-bottom: 35px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 25px;">
+                <h3 style="color: #00ffcc; font-size: 20px; margin-bottom: 15px; text-align: center;">Formação & Cursos</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; color: #c0c0d0; font-size: 15px;">
+                    <li style="background: rgba(22, 33, 62, 0.5); padding: 12px 16px; border-radius: 8px; border-left: 3px solid #00ffcc;">
+                        <i class="fa-solid fa-graduation-cap" style="color: #00ffcc; margin-right: 8px;"></i> Administração — FAETEC *(Cursando)*
+                    </li>
+                    <li style="background: rgba(22, 33, 62, 0.5); padding: 12px 16px; border-radius: 8px; border-left: 3px solid #00ffcc;">
+                        <i class="fa-solid fa-truck-fast" style="color: #00ffcc; margin-right: 8px;"></i> Logística — Estácio *(Cursando)*
+                    </li>
+                    <li style="background: rgba(22, 33, 62, 0.5); padding: 12px 16px; border-radius: 8px; border-left: 3px solid #00ffcc;">
+                        <i class="fa-solid fa-computer" style="color: #00ffcc; margin-right: 8px;"></i> Informática — Micro Rio *(Cursando)*
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Habilidades e Ferramentas -->
+            <div style="margin-bottom: 35px;">
+                <h3 style="color: #00ffcc; font-size: 20px; margin-bottom: 15px; text-align: center;">Habilidades & Ferramentas</h3>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">HTML5</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">CSS3</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">JavaScript</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">Git & GitHub</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">Word</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">PowerPoint</span>
+                    <span style="background: rgba(22, 33, 62, 0.9); color: #00ffcc; border: 1px solid rgba(0, 255, 204, 0.3); padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">Excel</span>
+                </div>
+            </div>
+            
+            <!-- Botão de Voltar -->
+            <div class="hero-buttons" style="justify-content: center; display: flex;">
+                <a href="index.html" class="btn primary-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Início
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

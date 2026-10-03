@@ -1,0 +1,140 @@
+/* Importando o estilo base para manter a mesma identidade visual */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fundo com overlay escuro idêntico ao index */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(20, 20, 40, 0.8) 0%, rgba(5, 5, 10, 0.95) 100%);
+    z-index: -1;
+}
+
+/* Navegação Superior / Menu Flutuante idêntica ao index */
+.top-nav {
+    position: fixed;
+    top: 20px;
+    background: rgba(30, 30, 46, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-icon {
+    color: #8b8b9e;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover, .nav-icon.active {
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+/* Container do Conteúdo com o mesmo estilo Hero/Card moderno */
+.sobre-container {
+    max-width: 650px;
+    width: 90%;
+    background: rgba(26, 26, 46, 0.75);
+    backdrop-filter: blur(12px);
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sobre-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.sobre-texto {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #c0c0d0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo das Tech Tags igual ao Dock / Skills */
+.sobre-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.sobre-skills span {
+    background: rgba(22, 33, 62, 0.9);
+    color: #00ffcc;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de Voltar com o mesmo padrão dos botões principais */
+.btn-voltar-container {
+    text-align: center;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(135deg, #0056b3, #003f8a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}

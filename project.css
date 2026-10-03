@@ -1,0 +1,103 @@
+/* =========================================
+   ESTILOS DA PÁGINA DE PROJETOS (project.css)
+   ========================================= */
+
+/* Container principal dos projetos */
+.projetos-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 20px;
+}
+
+/* Caixa central translúcida com efeito glassmorphism */
+.projetos-container > div {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(18, 18, 29, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 45px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Grade de projetos em quadrados */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+/* Cada quadrado de projeto individual (Card) */
+.card-projeto {
+    background: rgba(22, 33, 62, 0.6);
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito ao passar o mouse por cima do quadrado */
+.card-projeto:hover {
+    border-color: rgba(0, 255, 204, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+/* Título de cada projeto */
+.card-projeto h3 {
+    color: #00ffcc;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Descrição do projeto */
+.card-projeto p {
+    color: #c0c0d0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Tags de tecnologias */
+.tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    font-size: 11px;
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Botão de ver projeto dentro do card */
+.btn-projeto {
+    display: inline-block;
+    color: #00ffcc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-projeto:hover {
+    color: #fff;
+    transform: translateX(3px);
+}

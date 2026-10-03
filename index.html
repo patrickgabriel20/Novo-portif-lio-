@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Gabriel | Desenvolvedor Front-End / ADS</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Efeitos Tecnológicos, Caixa Hello World e Códigos Caindo ao Fundo -->
+    <style>
+        /* Efeito interativo nos botões ao passar o rato */
+        .btn {
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover, .primary-btn:hover, .secondary-btn:hover {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.8) !important;
+        }
+
+        /* Efeito interativo nos ícones do Dock ao passar o rato */
+        .dock-item {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dock-item:hover {
+            transform: translateY(-8px) scale(1.2) !important;
+            filter: drop-shadow(0 0 10px #00ffcc) !important;
+        }
+
+        /* Fundo com códigos e números flutuantes quase apagados */
+        .code-rain-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .code-column {
+            position: absolute;
+            top: -100px;
+            font-family: monospace;
+            font-size: 14px;
+            color: rgba(0, 255, 204, 0.12);
+            writing-mode: vertical-lr;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(105vh);
+            }
+        }
+
+        /* Container da Caixa de Código "Hello, World!" (Lado Direito) */
+        .tech-illustration {
+            position: absolute;
+            top: 22%;
+            right: 6%;
+            width: 320px;
+            height: 200px;
+            background: rgba(18, 18, 29, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 204, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Barra superior da janela de código */
+        .code-window-header {
+            background: rgba(22, 33, 62, 0.9);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .window-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .window-title {
+            margin-left: 8px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #8a8a9e;
+        }
+
+        /* Corpo do código simulado apenas com Hello World */
+        .code-window-body {
+            padding: 20px;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #c0c0d0;
+        }
+
+        .code-string { color: #a5d6ff; }
+        .code-func { color: #d2a8ff; }
+
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 950px) {
+            .tech-illustration, .code-rain-bg {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo com overlay escuro -->
+    <div class="background-overlay"></div>
+
+    <!-- Códigos e números flutuantes ao fundo -->
+    <div class="code-rain-bg">
+        <div class="code-column" style="left: 10%; animation-duration: 7s; animation-delay: 0s;">01001000 01100101 01101100 01101100 01101111</div>
+        <div class="code-column" style="left: 25%; animation-duration: 10s; animation-delay: 2s;">const dev = true; 101011 001101</div>
+        <div class="code-column" style="left: 45%; animation-duration: 8s; animation-delay: 1s;">HTML CSS JS 11001010 992819</div>
+        <div class="code-column" style="left: 65%; animation-duration: 12s; animation-delay: 3s;">00110011 01110011 01110100</div>
+        <div class="code-column" style="left: 85%; animation-duration: 9s; animation-delay: 1.5s;">Hello World! 404 200 OK</div>
+    </div>
+
+    <!-- Navegação Superior / Menu Flutuante -->
+    <header class="top-nav">
+        <nav class="nav-icons">
+            <a href="index.html" class="nav-icon active" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="sobreMim.html" class="nav-icon" title="Sobre Mim"><i class="fa-solid fa-user"></i></a>
+            <a href="project.html" class="nav-icon" title="Projetos"><i class="fa-solid fa-folder"></i></a>
+        </nav>
+    </header>
+
+   <!-- Ícones Laterais de Redes Sociais -->
+    <aside class="sidebar-socials">
+        <a href="https://github.com" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/patrick-gabriel-a4785b1a4" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/5521984156061" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ptkgb44@gmail.com" target="_blank" rel="noopener noreferrer" title="Enviar E-mail">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </aside>
+
+    <!-- Seção Principal (Hero) -->
+    <main class="hero-section">
+        <!-- Caixa de Código apenas com Hello World (Lado Direito) -->
+        <div class="tech-illustration">
+            <div class="code-window-header">
+                <div class="window-dot dot-red"></div>
+                <div class="window-dot dot-yellow"></div>
+                <div class="window-dot dot-green"></div>
+                <span class="window-title">main.js</span>
+            </div>
+            <div class="code-window-body">
+                <span class="code-func">console.log</span>(<br>
+                &nbsp;&nbsp;<span class="code-string">"Hello, World!"</span><br>
+                );
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <p class="intro-text">Olá, eu sou</p>
+            <h1>Patrick Gabriel</h1>
+            <p class="role-text">> Estudante de ADS | Desenvolvedor Front-End em formação</p>
+            
+            <p class="bio-snippet">
+                Apaixonado por tecnologia e por aprender na prática. Atualmente, desenvolvo meus conhecimentos em programação, desenvolvimento web e ferramentas de produtividade, buscando minha primeira oportunidade profissional em tecnologia.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="Curriculo_PatrickGabriel.pdf" download class="btn primary-btn">
+                    <i class="fa-solid fa-download"></i> Baixar currículo
+                </a>
+                <a href="https://linkedin.com/in/patrick-gabriel-a4785b1a4" target="_blank" class="btn secondary-btn">
+                    <i class="fa-brands fa-linkedin"></i> in LinkedIn
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dock Inferior com suas Tecnologias e Cursos -->
+    <footer class="tech-dock">
+        <div class="dock-container">
+            <div class="dock-item" title="HTML5"><i class="fa-brands fa-html5" style="color: #e34f26;"></i></div>
+            <div class="dock-item" title="CSS3"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i></div>
+            <div class="dock-item" title="JavaScript"><i class="fa-brands fa-js" style="color: #f7df1e;"></i></div>
+            <div class="dock-item" title="Git & GitHub"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i></div>
+            <div class="dock-item" title="AWS Discovery Day"><i class="fa-brands fa-aws" style="color: #ff9900;"></i></div>
+            <div class="dock-item" title="VS Code"><i class="fa-solid fa-code" style="color: #007acc;"></i></div>
+        </div>
+    </footer>
+
+</body>
+</html>
